@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神祕黑暗網頁</title>
+    <title>神秘</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
@@ -31,6 +31,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
         }
 
         .nav .logo {
@@ -66,6 +67,7 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
             animation: fadeIn 1s ease-in-out;
+            z-index: 100;
         }
 
         @keyframes fadeIn {
@@ -196,12 +198,21 @@
             font-size: 1.2em;
             color: #ccc;
         }
+
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            font-size: 1em;
+            color: #666;
+        }
     </style>
 </head>
 <body>
     <div class="background-animation"></div>
     <div class="nav">
-        <div class="logo">神祕網站</div>
+        <div class="logo">心靈暗網</div>
         <div class="menu">
             <a href="#">主頁</a>
             <a href="#">介紹</a>
@@ -214,9 +225,9 @@
         <button onclick="checkPassword()">確認</button>
     </div>
     <div id="main-screen" class="content">
-        <h1>歡迎來到神祕世界</h1>
+        <h1>歡迎來到心靈暗網</h1>
         <div class="intro">
-            這裡是神祕網站的介紹部分。請選擇以下選項了解更多。
+            請勿外流此網站，感謝您的配合。
         </div>
         <div class="buttons">
             <button onclick="navigateTo('page1.html')">選項1</button>
@@ -225,6 +236,9 @@
             <button onclick="navigateTo('page4.html')">選項4</button>
             <button onclick="navigateTo('page5.html')">選項5</button>
         </div>
+    </div>
+    <div class="footer">
+        創作 by 李沅泰
     </div>
     <script>
         function checkPassword() {
