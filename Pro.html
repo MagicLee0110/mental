@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神祕黑暗網頁</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #1a1a1a, #000000);
+            overflow: hidden;
+        }
+
+        .nav {
+            width: 100%;
+            background-color: #000;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ffcc00;
+        }
+
+        .nav .menu {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav .menu a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        .nav .menu a:hover {
+            color: #ffcc00;
+        }
+
+        .content {
+            margin-top: 80px; /* To avoid content being hidden under the nav */
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes textGlow {
+            from {
+                text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00;
+            }
+            to {
+                text-shadow: 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00, 0 0 50px #ffcc00;
+            }
+        }
+
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            width: calc(100% - 22px);
+            background-color: #333;
+            color: #fff;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+            transition: box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+
+        input[type="password"]:focus {
+            box-shadow: inset 0 0 10px #ffcc00;
+            background-color: #222;
+            outline: none;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #444;
+            color: #fff;
+            margin: 5px;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s, color 0.3s;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background-color: #ffcc00;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #main-screen {
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+
+            input[type="password"], button {
+                font-size: 1em;
+            }
+        }
+
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .background-animation::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            transform: translate(-50%, -50%);
+            animation: pulse 6s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+
+        .intro {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="nav">
+        <div class="logo">神祕網站</div>
+        <div class="menu">
+            <a href="#">主頁</a>
+            <a href="#">介紹</a>
+            <a href="#">聯絡我們</a>
+        </div>
+    </div>
+    <div id="password-screen" class="content">
+        <h1>輸入密碼</h1>
+        <input type="password" id="password" placeholder="密碼">
+        <button onclick="checkPassword()">確認</button>
+    </div>
+    <div id="main-screen" class="content">
+        <h1>歡迎來到神祕世界</h1>
+        <div class="intro">
+            這裡是神祕網站的介紹部分。請選擇以下選項了解更多。
+        </div>
+        <div class="buttons">
+            <button onclick="navigateTo('page1.html')">選項1</button>
+            <button onclick="navigateTo('page2.html')">選項2</button>
+            <button onclick="navigateTo('page3.html')">選項3</button>
+            <button onclick="navigateTo('page4.html')">選項4</button>
+            <button onclick="navigateTo('page5.html')">選項5</button>
+        </div>
+    </div>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "42734") {
+                document.getElementById("password-screen").style.display = "none";
+                document.getElementById("main-screen").style.display = "block";
+            } else {
+                alert("密碼錯誤");
+            }
+        }
+
+        function navigateTo(page) {
+            window.location.href = page;
+        }
+    </script>
+</body>
+</html>
