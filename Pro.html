@@ -273,6 +273,7 @@
             var validCredentials = {
                 "LKT": "1114",
                 "LYT": "LYT0110",
+                "CYT": "1221",
                 "TEST": "TEST"
             };
 
@@ -297,6 +298,14 @@
                     document.getElementById("button4").style.display = "block";
                     document.getElementById("button5").style.display = "none";
             	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"劉冠廷"專用帳號</div>';
+                } else if (username === "CYT") {
+                    document.getElementById("button0").style.display = "block";
+                    document.getElementById("button1").style.display = "none";
+                    document.getElementById("button2").style.display = "none";
+                    document.getElementById("button3").style.display = "none";
+                    document.getElementById("button4").style.display = "none";
+                    document.getElementById("button5").style.display = "none";
+            	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"陳奕廷"專用帳號</div>';
                 } else {
                     document.getElementById("button1").style.display = "none";
                     document.getElementById("button2").style.display = "none";
