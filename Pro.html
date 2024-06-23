@@ -231,12 +231,13 @@
             請勿外流此網站，感謝您的配合。
         </div>
         <div class="buttons" id="buttons">
-            <button id="button1" onclick="navigateTo('https://sites.google.com/view/limitdice/%E9%A6%96%E9%A0%81')">極限骰</button>
-            <button id="button2" onclick="navigateTo('https://sites.google.com/view/dicepro/%E9%A6%96%E9%A0%81')">極限骰pro</button>
-            <button id="button3" onclick="navigateTo('https://magiclee0110.github.io/mental/OUT')">萬用預言</button>
-            <button id="button4" onclick="navigateTo('https://magiclee0110.github.io/Force/number')">萬用數字強迫</button>
-            <button id="button5" onclick="navigateTo('page5.html')">開發中</button>
-            <button id="button1114" onclick="navigateTo('page5.html')">感謝 劉冠廷 $1758 贊助撥出</button>
+            <button id="button0" style="display:none;" onclick="navigateTo('https://sites.google.com/view/acaam/%E9%A6%96%E9%A0%81')">細數巴格拉斯</button>
+            <button id="button1" style="display:none;" onclick="navigateTo('https://sites.google.com/view/limitdice/%E9%A6%96%E9%A0%81')">極限骰</button>
+            <button id="button2" style="display:none;" onclick="navigateTo('https://sites.google.com/view/dicepro/%E9%A6%96%E9%A0%81')">極限骰pro</button>
+            <button id="button3" style="display:none;" onclick="navigateTo('https://magiclee0110.github.io/mental/OUT')">萬用預言</button>
+            <button id="button4" style="display:none;" onclick="navigateTo('https://sites.google.com/view/numberforce/%E9%A6%96%E9%A0%81')">萬用數字強迫</button>
+            <button id="button5" style="display:none;" onclick="navigateTo('page5.html')">開發中</button>
+	    </br>
         </div>
     </div>
     <div class="footer">
@@ -281,26 +282,28 @@
                 
                 // 根據不同的帳號來顯示或隱藏按鈕
                 if (username === "LYT") {
+                    document.getElementById("button0").style.display = "block";
                     document.getElementById("button1").style.display = "block";
                     document.getElementById("button2").style.display = "block";
                     document.getElementById("button3").style.display = "block";
                     document.getElementById("button4").style.display = "block";
                     document.getElementById("button5").style.display = "block";
-                    document.getElementById("button1114").style.display = "none";
+		    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"心靈之王"專用帳號</div>';
                 } else if (username === "LKT") {
+                    document.getElementById("button0").style.display = "block";
                     document.getElementById("button1").style.display = "block";
                     document.getElementById("button2").style.display = "block";
                     document.getElementById("button3").style.display = "block";
                     document.getElementById("button4").style.display = "block";
                     document.getElementById("button5").style.display = "none";
-                    document.getElementById("button1114").style.display = "block";
+            	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"劉冠廷"專用帳號</div>';
                 } else {
                     document.getElementById("button1").style.display = "none";
                     document.getElementById("button2").style.display = "none";
                     document.getElementById("button3").style.display = "none";
                     document.getElementById("button4").style.display = "none";
                     document.getElementById("button5").style.display = "none";
-                    document.getElementById("button1114").style.display = "none";
+           	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"測試用"帳號</div>';
                 }
             } else {
                 alert("帳號或密碼錯誤");
