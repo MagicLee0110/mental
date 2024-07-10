@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>退休金試算</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    h2 {
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    input {
+      padding: 8px;
+      margin-bottom: 12px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      display: block;
+      margin: 0 auto;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #result {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      width: 100%; /* Occupy entire width */
+      box-sizing: border-box; /* Include padding in width calculation */
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<h2>退休金試算</h2>
+
+<div style="max-width: 700px; margin: 0 auto;">
+  <label for="retirementAge">想幾歲退休：</label>
+  <input type="number" id="retirementAge" placeholder="請輸入想退休的年齡">
+
+  <label for="initialAmount">退休金初始金額(萬元)：</label>
+  <input type="number" id="initialAmount" placeholder="請輸入退休金初始金額">
+
+  <label for="growthRate">每年退休金成長率（百分比）：</label>
+  <input type="number" id="growthRate" placeholder="請輸入成長率">
+
+  <label for="withdrawalRate">每年提領比例（百分比）：</label>
+  <input type="number" id="withdrawalRate" placeholder="請輸入提領比例">
+  <button onclick="calculateRetirement()">計算</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  function calculateRetirement() {
+    const initialAmount = parseFloat(document.getElementById('initialAmount').value);
+    const growthRate = parseFloat(document.getElementById('growthRate').value) / 100;
+    const withdrawalRate = parseFloat(document.getElementById('withdrawalRate').value) / 100;
+    const retirementAge = parseFloat(document.getElementById('retirementAge').value);
+    const resultDiv = document.getElementById('result');
+
+    if (!initialAmount || !growthRate || !withdrawalRate || !retirementAge) {
+      resultDiv.innerHTML = '<p class="error">請填寫所有欄位</p>';
+      return;
+    }
+
+    let resultHTML = '<h3>退休金試算結果</h3><ul>';
+
+    let retirementAmount = initialAmount;
+    for (let year = 1; year <= 100; year++) {
+      const total = retirementAmount * (1 + growthRate);
+      const withdrawal = Math.floor(total * withdrawalRate);
+      retirementAmount = total - withdrawal;
+      const Age = retirementAge + year;
+
+      resultHTML += `<li>第 ${year} 年(${Age}歲)：總額為 ${total.toFixed(0)} 萬，提領 ${withdrawal.toFixed(0)} 萬，剩餘 ${Math.max(retirementAmount, 0).toFixed(0)} 萬。</li>`;
+
+      if (retirementAmount <= 0) {
+        resultHTML += '<li>退休金為負值，提前耗盡。</li>';
+        break;
+      }
+    }
+
+    resultHTML += '</ul>';
+    resultDiv.innerHTML = resultHTML;
+  }
+</script>
+
+</body>
+</html>

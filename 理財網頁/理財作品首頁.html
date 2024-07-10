@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>理財作品首頁</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      width: 300px;
+      height: 200px;
+      margin: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    .card a {
+      text-decoration: none;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .card-content {
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px 0;
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>專業理財專區</h1>
+    <p>祝您早日財富自由</p>
+  </header>
+
+  <div class="container">
+    <!-- 這裡放置6個欄位連結 -->
+    <div class="card">
+      <a href="作品\年化報酬計算器.html" target="_blank">
+        <div class="card-content">
+          <h3>年化報酬計算器</h3>
+        </div>
+      </a>
+    </div>
+    <div class="card">
+      <a href="作品\年化報酬計算器(加入每年再投入).html" target="_blank">
+        <div class="card-content">
+          <h3>年化報酬計算器2(加入每年再投入)</h3>
+        </div>
+      </a>
+    </div>
+    <!-- ... -->
+    <div class="card">
+      <a href="作品\退休金試算(提領百分比).html" target="_blank">
+        <div class="card-content">
+          <h3>退休金試算(提領百分比)</h3>
+        </div>
+      </a>
+    </div>
+    <div class="card">
+      <a href="作品\退休金試算(提領整數).html" target="_blank">
+        <div class="card-content">
+          <h3>退休金試算(提領整數)</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2023 Magic World</p>
+  </footer>
+
+</body>
+</html>

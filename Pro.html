@@ -7,19 +7,20 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #121212;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100vh;
-            background: radial-gradient(circle, #1a1a1a, #000000);
-            overflow: hidden;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* 更改为 min-height */
+    background: radial-gradient(circle, #1a1a1a, #000000);
+    overflow-y: auto; /* 确保页面可以垂直滚动 */
+}
+
 
         .nav {
             width: 100%;
@@ -237,6 +238,7 @@
             <button id="button3" style="display:none;" onclick="navigateTo('https://sites.google.com/view/multipleout/%E9%A6%96%E9%A0%81')">萬用預言</button>
             <button id="button4" style="display:none;" onclick="navigateTo('https://sites.google.com/view/numberforce/%E9%A6%96%E9%A0%81')">萬用數字強迫</button>
             <button id="button5" style="display:none;" onclick="navigateTo('https://magiclee0110.github.io/Numerology/google%E7%9E%AC%E5%8D%A0')">瞬占</button>
+            <button id="button6" style="display:none;" onclick="navigateTo('理財網頁/理財作品首頁.html')">理財專區</button>
 	    </br>
         </div>
     </div>
@@ -275,6 +277,7 @@
                 "LYT": "LYT0110",
                 "CYT": "1221",
 		"LZC": "1227",
+		"James": "1089",
                 "TEST": "TEST"
             };
 
@@ -290,6 +293,7 @@
                     document.getElementById("button3").style.display = "block";
                     document.getElementById("button4").style.display = "block";
                     document.getElementById("button5").style.display = "block";
+                    document.getElementById("button6").style.display = "block";
 		    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"心靈之王"專用帳號</div>';
                 } else if (username === "LKT") {
                     document.getElementById("button0").style.display = "block";
@@ -315,7 +319,16 @@
                     document.getElementById("button4").style.display = "none";
                     document.getElementById("button5").style.display = "none";
             	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"林政謙"專用帳號</div>';
-                } else {
+                }  else if (username === "James") {
+                    document.getElementById("button0").style.display = "none";
+                    document.getElementById("button1").style.display = "none";
+                    document.getElementById("button2").style.display = "none";
+                    document.getElementById("button3").style.display = "none";
+                    document.getElementById("button4").style.display = "none";
+                    document.getElementById("button5").style.display = "none";
+		    document.getElementById("button6").style.display = "block";
+            	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"全台唯一心靈幻術師-簡銘宣"專用帳號</div>';
+                }else {
                     document.getElementById("button1").style.display = "none";
                     document.getElementById("button2").style.display = "none";
                     document.getElementById("button3").style.display = "none";
