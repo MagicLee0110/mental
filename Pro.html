@@ -241,6 +241,7 @@ body {
             <button id="button6" style="display:none;" onclick="navigateTo('理財網頁/理財作品首頁.html')">理財專區</button>
             <button id="button7" style="display:none;" onclick="navigateTo('https://sites.google.com/view/nlp-starsigns/%E9%A6%96%E9%A0%81')">表象讀星系統</button>
             <button id="button8" style="display:none;" onclick="navigateTo('https://sites.google.com/view/tetrad-principle/%E9%A6%96%E9%A0%81')">性格分析測試</button>
+            <button id="button9" style="display:none;" onclick="navigateTo('https://magiclee0110.github.io/Reading/77cardreading.html')">天命8.0</button>
 	    </br>
         </div>
     </div>
@@ -281,6 +282,7 @@ body {
 		"LZC": "1227",
 		"James": "1089",
 		"tu_strange": "0305",
+		"CZN": "0321",
                 "TEST": "TEST"
             };
 
@@ -346,6 +348,17 @@ body {
 		    document.getElementById("button6").style.display = "block";
 		    document.getElementById("button7").style.display = "block";
             	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"怪奇魔術師-杜奇"專用帳號</div>';
+                }  else if (username === "CZN") {
+                    document.getElementById("button0").style.display = "none";
+                    document.getElementById("button1").style.display = "none";
+                    document.getElementById("button2").style.display = "none";
+                    document.getElementById("button3").style.display = "none";
+                    document.getElementById("button4").style.display = "none";
+                    document.getElementById("button5").style.display = "none";
+		    document.getElementById("button6").style.display = "none";
+		    document.getElementById("button7").style.display = "none";
+		    document.getElementById("button9").style.display = "block";
+            	    document.getElementById("main-screen").innerHTML += '<div class="welcome-message">此為"陳諍念"專用帳號</div>';
                 }else {
                     document.getElementById("button1").style.display = "none";
                     document.getElementById("button2").style.display = "none";
